@@ -7,17 +7,18 @@ SinglyLinkedList<T>* SinglyLinkedList<T> :: createSinglyLinkedList(int N, T Min,
 {
   assert( Max >= Min);
   head = (SinglyLinkedList*) malloc( sizeof(SinglyLinkedList));
-  head->data = (T) Min + rand() % (Max-Min);
+  head->data = (T) Min + random( Max-Min);
 
   SinglyLinkedList* temp = head;
 
   for(int i=1; i<N; i++)
   {
     temp->next = (SinglyLinkedList*) malloc(sizeof(SinglyLinkedList));
-    temp->next->data = (T) Min + rand() % (Max-Min);
+    temp->next->data = (T) Min + random(Max-Min);
     temp = temp->next;
   }
 
+  tail = temp;
   temp->next = NULL;
   return head;
 }

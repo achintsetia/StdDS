@@ -10,6 +10,7 @@ struct SinglyLinkedList
   void printSinglyLinkedList();
 
   SinglyLinkedList* head;
+  SinglyLinkedList* tail;
   SinglyLinkedList* next;
   T data;
 };
